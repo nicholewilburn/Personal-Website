@@ -1,91 +1,18 @@
-<html>
+<!DOCTYPE html>
+<html lang="en">
 <head>
-<title>UGUNAGI.COM</title>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	
+	<link rel="stylesheet" type="text/css" href="files\style.css" />
 
-<style type="text/css">
-body {
-	background-color:#448BFC;
-	background-image:url("images/STARTPAGE-BG2.png");
-	background-position: top;
-	background-repeat: repeat-x;
-	}
-#title {
-	width:500px;
-	height:100px;
-	position: top center;
-	background-image:url("images/TITLE.gif");
-	background-position: top center;
-	background-repeat: no-repeat;
-	}
-#sea {
-	width:1051px;
-	height:757px;
-	background-image:url("images/STARTPAGE-BACKUP.png");
-	background-position: top center;
-	background-repeat: no-repeat;
-	position: relative center;
-	z-index: 1;
-	}
-#news {
-	width:343px;
-	height:141px;
-  	background-image: url("images/STARTPAGE-NEWS.png");
-	position: absolute;
-	margin-left:19px;
-	z-index: 2;
-	}
-#portfolio {
-	width:281px;
-	height:225px;
-  	background-image: url("images/STARTPAGE-PORTFOLIO.png");
-	position: absolute;
-	margin-top:231px;
-	margin-left:165px;
-	z-index: 3;
-	}
-#resources {
-	width:378px;
-	height:299px;
-  	background-image: url("images/STARTPAGE-RESOURCES.png");
-	position: absolute;
-	margin-top:389px;
-	margin-left:0px;
-	z-index: 4;
-	}
-#about {
-	width:321px;
-	height:263px;
-  	background-image: url("images/STARTPAGE-ABOUT.png");
-	position: absolute;
-	margin-top:49px;
-	margin-left:694px;
-	z-index: 5;
-	}
-#contact {
-	width:200px;
-	height:312px;
-  	background-image: url("images/STARTPAGE-CONTACT.png");
-	position: absolute;
-	margin-top:436px;
-	margin-left:489px;
-	z-index: 6;
-	}
-#games {
-	width:323px;
-	height:340px;
-  	background-image: url("images/STARTPAGE-GAMES.png");
-	position: absolute;
-	margin-top:387px;
-	margin-left:728px;
-	z-index: 7;
-	}
-#news:hover,#portfolio:hover,#resources:hover,#about:hover,#contact:hover,#games:hover {
-	opacity:0;
-	}
-</style>
+	<title>UGUNAGI.COM</title>
+</head>
+<body>
 
-<center>
-<div id="title"></div>
+
+<div id="title"></div><br>
 <div id="sea">
 	<a href="news.html" target="new" alt="NEWS">
 	<div id="news"></div>
@@ -107,163 +34,8 @@ body {
 		</a>
 </div>
 
-<script type="text/javascript">
-// <![CDATA[
-var colours=new Array("#a6f", "#60f", "#60f", "#a6f", "#ccc"); // colours for top, right, bottom and left borders and background of bubbles
-var bubbles=66; // how many bubbles are moving at any given time
-var over_or_under="over"; // set to "over" for bubbles to always be on top, or "under" to allow them to float behind other objects
+</body>
 
-/****************************
-*   JavaScript Bubble Bath  *
-*(c)2010-13 mf2fm web-design*
-*  http://www.mf2fm.com/rv  *
-* DON'T EDIT BELOW THIS BOX *
-****************************/
+<script type="text/javascript" src="files/bubbles.js"></script>
 
-var swide=800;
-var shigh=600;
-var bubb=new Array();
-var bubbx=new Array();
-var bubby=new Array();
-var bubbs=new Array();
-var boddie;
-var ie_version=(navigator.appVersion.indexOf("MSIE")!=-1)?parseFloat(navigator.appVersion.split("MSIE")[1]):false;
-
-function addLoadEvent(funky) {
-  var oldonload=window.onload;
-  if (typeof(oldonload)!='function') window.onload=funky;
-  else window.onload=function() {
-    if (oldonload) oldonload();
-    funky();
-  }
-}
-
-addLoadEvent(bubba);
-
-function bubba() { if (document.getElementById) {
-  var i, rats, div;
-  boddie=document.createElement("div");
-  boddie.style.position="fixed";
-  boddie.style.top="0px";
-  boddie.style.left="0px";
-  boddie.style.overflow="visible";
-  boddie.style.width="1px";
-  boddie.style.height="1px";
-  boddie.style.backgroundColor="transparent";
-  boddie.style.zIndex="0";
-  document.body.appendChild(boddie);
-  set_width();
-  for (i=0; i<bubbles; i++) {
-    rats=createDiv("3px", "3px");
-
-	div=createDiv("auto", "auto");
-    rats.appendChild(div);
-	div=div.style;
-    div.top="1px";
-    div.left="0px";
-	div.bottom="1px";
-	div.right="0px";
-	div.borderLeft="1px solid "+colours[3];
-	div.borderRight="1px solid "+colours[1];
-
-    div=createDiv("auto", "auto");
-	rats.appendChild(div);
-	div=div.style;
-    div.top="0px";
-    div.left="1px";
-	div.right="1px";
-	div.bottom="0px"
-	div.borderTop="1px solid "+colours[0];
-	div.borderBottom="1px solid "+colours[2];
-
-	div=createDiv("auto", "auto");
-	rats.appendChild(div);
-	div=div.style;
-	div.left="1px";
-	div.right="1px";
-    div.bottom="1px";
-	div.top="1px";
-	div.backgroundColor=colours[4];
-    if (ie_version && ie_version<10) div.filter="alpha(opacity=50)";
-    else div.opacity=0.5;
-
-    boddie.appendChild(rats);
-	bubb[i]=rats.style;
-	bubb[i].zIndex=(over_or_under=="over")?"1001":"0";
-  }
-  bubble();
-}}
-
-function bubble() {
-  var c;
-  for (c=0; c<bubbles; c++) if (!bubby[c] && Math.random()<0.333) {
-    bubb[c].left=(bubbx[c]=Math.floor(swide/6+Math.random()*swide/1.5)-10)+"px";
-    bubb[c].top=(bubby[c]=shigh)+"px";
-    bubb[c].width="3px";
-	bubb[c].height="3px"
-	bubb[c].visibility="visible";
-	bubbs[c]=3;
-    break;
-  }
-  for (c=0; c<bubbles; c++) if (bubby[c]) update_bubb(c);
-  setTimeout("bubble()", 40);
-}
-
-function update_bubb(i) {
-  if (bubby[i]) {
-    bubby[i]-=bubbs[i]/2+i%2;
-    bubbx[i]+=(i%5-2)/5;
-    if (bubby[i]>0 && bubbx[i]>0 && bubbx[i]<swide) {
-	  if (Math.random()<bubbs[i]/shigh*2 && bubbs[i]++<8) {
-		bubb[i].width=bubbs[i]+"px";
-		bubb[i].height=bubbs[i]+"px";
-	  }
-      bubb[i].top=bubby[i]+"px";
-      bubb[i].left=bubbx[i]+"px";
-    }
-    else {
-      bubb[i].visibility="hidden";
-      bubby[i]=0;
-      return;
-    }
-  }
-}
-
-window.onresize=set_width;
-function set_width() {
-  var sw_min=999999;
-  var sh_min=999999;
-  if (document.documentElement && document.documentElement.clientWidth) {
-    if (document.documentElement.clientWidth>0) sw_min=document.documentElement.clientWidth;
-    if (document.documentElement.clientHeight>0) sh_min=document.documentElement.clientHeight;
-  }
-  if (typeof(self.innerWidth)=='number' && self.innerWidth) {
-    if (self.innerWidth>0 && self.innerWidth<sw_min) sw_min=self.innerWidth;
-    if (self.innerHeight>0 && self.innerHeight<sh_min) sh_min=self.innerHeight;
-  }
-  if (document.body.clientWidth) {
-    if (document.body.clientWidth>0 && document.body.clientWidth<sw_min) sw_min=document.body.clientWidth;
-    if (document.body.clientHeight>0 && document.body.clientHeight<sh_min) sh_min=document.body.clientHeight;
-  }
-  if (sw_min==999999 || sh_min==999999) {
-    sw_min=800;
-    sh_min=600;
-  }
-  swide=sw_min;
-  shigh=sh_min;
-}
-
-function createDiv(height, width) {
-  var div=document.createElement("div");
-  div.style.position="absolute";
-  div.style.height=height;
-  div.style.width=width;
-  div.style.overflow="hidden";
-  div.style.backgroundColor="transparent";
-  return (div);
-}
-// ]]>
-</script>
-
-</head>
 </html>
