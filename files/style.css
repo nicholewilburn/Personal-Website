@@ -1,0 +1,84 @@
+body {
+	background-color:#448BFC;
+	background-image:url("images\STARTPAGE-BG2.png");
+	background-position: top;
+	background-repeat: repeat-x;
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    margin: auto;
+	}
+#title {
+    margin: auto;
+    width: 500px;
+	height:100px;
+	background-image:url("images/TITLE.gif");
+	background-position: top center;
+	background-repeat: no-repeat;
+	}
+#sea {
+    margin: auto;
+	width:1051px;
+	height:757px;
+	background-image:url("images/STARTPAGE-BACKUP.png");
+	background-position: top center;
+	background-repeat: no-repeat;
+	position: relative center;
+	z-index: 1;
+	}
+#news {
+	width:343px;
+	height:141px;
+  	background-image: url("images/STARTPAGE-NEWS.png");
+	position: absolute;
+	margin-left:19px;
+	z-index: 2;
+	}
+#portfolio {
+	width:281px;
+	height:225px;
+  	background-image: url("images/STARTPAGE-PORTFOLIO.png");
+	position: absolute;
+	margin-top:231px;
+	margin-left:165px;
+	z-index: 3;
+	}
+#resources {
+	width:378px;
+	height:299px;
+  	background-image: url("images/STARTPAGE-RESOURCES.png");
+	position: absolute;
+	margin-top:389px;
+	margin-left:0px;
+	z-index: 4;
+	}
+#about {
+	width:321px;
+	height:263px;
+  	background-image: url("images/STARTPAGE-ABOUT.png");
+	position: absolute;
+	margin-top:49px;
+	margin-left:694px;
+	z-index: 5;
+	}
+#contact {
+	width:200px;
+	height:312px;
+  	background-image: url("images/STARTPAGE-CONTACT.png");
+	position: absolute;
+	margin-top:436px;
+	margin-left:489px;
+	z-index: 6;
+	}
+#games {
+	width:323px;
+	height:340px;
+  	background-image: url("images/STARTPAGE-GAMES.png");
+	position: absolute;
+	margin-top:387px;
+	margin-left:728px;
+	z-index: 7;
+	}
+#news:hover,#portfolio:hover,#resources:hover,#about:hover,#contact:hover,#games:hover {
+	opacity:0;
+	}
