@@ -1,3 +1,4 @@
+/* main */
 body {
 	background-color:#448BFC;
 	background-image:url("images\STARTPAGE-BG2.png");
@@ -15,6 +16,7 @@ body {
 	background-image:url("images/TITLE.gif");
 	background-position: top center;
 	background-repeat: no-repeat;
+	z-index:0;
 	}
 #sea {
     margin: auto;
@@ -24,7 +26,7 @@ body {
 	background-position: top center;
 	background-repeat: no-repeat;
 	position: relative center;
-	z-index: 1;
+	z-index: 0;
 	}
 #news {
 	width:343px;
@@ -82,3 +84,36 @@ body {
 #news:hover,#portfolio:hover,#resources:hover,#about:hover,#contact:hover,#games:hover {
 	opacity:0;
 	}
+
+/* news */
+#news-container {
+	display:none;
+	background-color: #12012e;
+	color: white;
+	width: 700px;
+	height:200px;
+	overflow: auto;
+	position: absolute; 
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+	box-shadow: rgba(255, 255, 255, 0.1) 0px 1px 1px 0px inset, rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px;
+
+	--angle: 0deg;
+	border: 5vmin solid;
+	border-image: conic-gradient(from var(--angle), red, yellow, lime, aqua, blue, magenta, red) 1;
+	
+	animation: 10s rotate linear infinite;
+}
+
+@keyframes rotate {
+	to {
+		--angle: 360deg;
+	}
+}
+
+@property --angle {
+  syntax: '<angle>';
+  initial-value: 0deg;
+  inherits: false;
+}
