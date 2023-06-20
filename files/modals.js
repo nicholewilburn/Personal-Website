@@ -7,7 +7,9 @@ newsClose.addEventListener('click', closeNews);
 
 function drawNews() {
     newsModal.style.display = "block";
+    newsClose.style.display = "block";
 }
 function closeNews () {
     newsModal.style.display = "none";
+    newsClose.style.display = "none";
 }
