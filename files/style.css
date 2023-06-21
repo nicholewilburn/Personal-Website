@@ -1,3 +1,9 @@
+.centerme {
+	text-align: center;
+	align-items: center;
+	justify-content: center;
+}
+
 /* main */
 body {
 	background-color:#448BFC;
@@ -17,6 +23,9 @@ body {
 	background-position: top center;
 	background-repeat: no-repeat;
 	z-index:0;
+
+	animation: bounceInDown; 
+  animation-duration: 2s;
 	}
 #sea {
     margin: auto;
@@ -106,24 +115,13 @@ body {
 	animation: 10s rotate linear infinite;
 }
 
-@keyframes rotate {
-	to {
-		--angle: 360deg;
-	}
-}
-
-@property --angle {
-  syntax: '<angle>';
-  initial-value: 0deg;
-  inherits: false;
-}
-
 #rainbow {
 	letter-spacing: 8px;
 	font-size: 110px;
 }
 .star-rainbow {
 	font-size:75px;
+	color: hotpink
 }
 .rainbow-hr {
     width: 80%;
@@ -169,11 +167,53 @@ body {
         rgba(255, 0, 0, 1) 100%
     );
 	outline: 5px solid black;
+	box-shadow: rgba(255, 255, 255, 0.1) 0px 1px 1px 0px inset, rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px;
 	z-index:5;
+}
+#close-news:hover{
+	animation: neon .08s ease-in-out infinite alternate;
+	text-transform: uppercase;
 }
 
 .news-title{
-	color:plum;
+	color:cyan;
+	font-size: 18px;
 	font-weight:bolder;
 	text-decoration: underline;
+	box-shadow: 0 5px 15px #afe0f5;
 }
+
+
+/* animations */
+@keyframes rotate {
+	to {
+		--angle: 360deg;
+	}
+}
+
+@property --angle {
+  syntax: '<angle>';
+  initial-value: 0deg;
+  inherits: false;
+}
+
+@keyframes neon {
+	from {
+	  text-shadow:
+	  0 0 6px rgba(202,228,225,0.92),
+	  0 0 30px rgba(202,228,225,0.34),
+	  0 0 12px rgba(30,132,242,0.52),
+	  0 0 21px rgba(30,132,242,0.92),
+	  0 0 34px rgba(30,132,242,0.78),
+	  0 0 54px rgba(30,132,242,0.92);
+	}
+	to {
+	  text-shadow:
+	  0 0 6px rgba(202,228,225,0.98),
+	  0 0 30px rgba(202,228,225,0.42),
+	  0 0 12px rgba(30,132,242,0.58),
+	  0 0 22px rgba(30,132,242,0.84),
+	  0 0 38px rgba(30,132,242,0.88),
+	  0 0 60px rgba(30,132,242,1);
+	}
+  }
