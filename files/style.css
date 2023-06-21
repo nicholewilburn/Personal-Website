@@ -145,8 +145,9 @@ body {
 #close-news {
 	display:none;
 	position:absolute;
-	bottom:140px;
-	right:200px;
+    top: 75%;
+    left: 50%;
+    transform: translate(-50%, -50%);
 	padding: 10px;
 	color:#12012e;
 	font-size: 24px;
@@ -183,6 +184,81 @@ body {
 	box-shadow: 0 5px 15px #afe0f5;
 }
 
+
+/*about me */
+
+#aboutme-container {
+	display:none;
+	background-color: #12012e;
+	color: white;
+	width: 500px;
+	height:300px;
+	overflow: auto;
+	position: absolute; 
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+	box-shadow: rgba(255, 255, 255, 0.1) 0px 1px 1px 0px inset, rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px;
+	border-bottom: 50px solid #380038;
+	outline: 30px solid purple;
+	-webkit-border-radius: 20px;
+-moz-border-radius: 20px;
+border-radius: 20px;
+padding: 30px;
+}
+.crt-effect {
+	background-image: url(https://cldup.com/gn3s3Fg75t.gif);
+	opacity: 0.1;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+	
+
+#aboutme-buttons {
+	display:none;
+	position:absolute;
+    top: 81%;
+    left: 60%;
+    transform: translate(-50%, -50%);
+	box-shadow: rgba(255, 255, 255, 0.1) 0px 1px 1px 0px inset, rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px;
+}
+#close-aboutme, #tvbtn-01, #tvbtn-02, #tvbtn-03 {
+	font-size: 28px;
+	background: linear-gradient(
+        90deg,
+        rgba(255, 0, 0, 1) 0%,
+        rgba(255, 154, 0, 1) 10%,
+        rgba(208, 222, 33, 1) 20%,
+        rgba(79, 220, 74, 1) 30%,
+        rgba(63, 218, 216, 1) 40%,
+        rgba(47, 201, 226, 1) 50%,
+        rgba(28, 127, 238, 1) 60%,
+        rgba(95, 21, 242, 1) 70%,
+        rgba(186, 12, 248, 1) 80%,
+        rgba(251, 7, 217, 1) 90%,
+        rgba(255, 0, 0, 1) 100%
+    );
+	outline: 2px solid black;
+	box-shadow: rgba(255, 255, 255, 0.1) 0px 1px 1px 0px inset, rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px;
+	z-index:5;
+}
+#close-aboutme:hover, #tvbtn-01:hover, #tvbtn-02:hover, #tvbtn-03:hover{
+	animation: neon .08s ease-in-out infinite alternate;
+}
+#close-aboutme {
+	margin-left: 30px;
+}
+
+#aboutme-FRAME-2{
+	display: none;
+}
+#aboutme-FRAME-3{
+	display: none;
+}
 
 /* animations */
 @keyframes rotate {
