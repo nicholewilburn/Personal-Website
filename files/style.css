@@ -260,6 +260,67 @@ padding: 30px;
 	display: none;
 }
 
+/* phone */
+
+#phone-container {
+	display:none;
+	width: 250px;
+	height: 450px;
+	border: 10px solid purple;
+	position: absolute; 
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+	background-color: #12012e;
+	border-radius: 10px;
+}
+#phone-screen-outer {
+	border: 20px solid cyan;
+	border-bottom-right-radius: 50px;
+	border-bottom-left-radius: 50px;
+	height: 60%;
+}
+#phone-number-container {
+	background-color: purple;
+}
+.phone-btn {
+	background-color: cyan;
+	color: purple;
+	font-size: 18px;
+	font-weight: bolder;
+	width: 35px;
+	height: 35px;
+}
+#phone-number-container {
+	display: block;
+	height: 30%;
+	width:100%;
+}
+#phone-row {
+	display:flex;
+	width: 100%;
+	margin:auto;
+	justify-content:space-evenly;
+	align-items: space-evenly;
+}
+#phone-screen {
+	display:flex;
+	width: 100%;
+	height: 70%;
+	background-color: black;
+	margin-top:20%;
+	border-radius: 20px;
+	color:white;
+}
+#close-phone{
+float: right;
+margin-right: 10%;
+}
+
+#phone-frame-02, #phone-frame-03, #phone-frame-04, #phone-frame-05, #phone-frame-06, #phone-frame-07, #phone-frame-08, #phone-frame-09, #phone-frame-str, #phone-frame-0, #phone-frame-hsh {
+	display:none;
+} 
+
 /* animations */
 @keyframes rotate {
 	to {
