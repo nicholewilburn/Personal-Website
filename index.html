@@ -9,6 +9,7 @@
 
 	<script type="text/javascript" src="files/bubbles.js"></script>
 	<script type="text/javascript" src="files/rainbow.js"></script>
+	<script type="text/javascript" src="files/wobble.js"></script>
 
 	<link
     rel="stylesheet"
@@ -44,6 +45,10 @@
 <div id="news-container">
 	<i class="fa-solid fa-star star-rainbow"></i><span id="rainbow">N E W S</span><i class="fa-solid fa-star star-rainbow"></i>
 	<br><hr class="rainbow-hr">
+	<span class="news-title">01.06 <i class="fa-solid fa-star"></i> NEW PHONE WHO THIS?</span>
+	<p>started work on the phone content, cause i had the "genius" idea to make each button a different "contact" - that is, my characters - and you can "call them" AKA click a link to go to their TH page (for now)! its taking some time and work to get it functioning the way i want<br>
+	<br>im also thinking about sticking the news content in an iframe so i can host it on another page, orrr only showing the newest ones and archiving the rest. not sure yet</p>
+	<hr class="rainbow-hr">
 	<span class="news-title">01.05 <i class="fa-solid fa-star"></i> NO, YOU HANG UP</span>
 	<p>took the plunge and tried something even a bit more challenging (which is actually the point of doing anything i guess) and made the phone out of css/html! kinda snazzy, really. even thoug hi could probably just draw it, and then animate the buttons, this is actually faster. hopefully that means i have a knack for it<br>
 	<br>each button actually takes you to a different screen on the phone. not sure what they'll all be for yet but maybe it will be cool, maybe it wont be. maybe it will still be cool in my heart</p>
@@ -87,14 +92,17 @@
 <div id="phone-container">
 	<div id="phone-screen-outer">
 		<div id="phone-screen">
-			<div id="phone-frame-01">
-				1
+			<div id="phone-frame-01" >
+				<span id="NAGI">N A G I</span>
+				<img src="files\images\PHONE\NAGI.jpg">
 			</div>
 			<div id="phone-frame-02">
-				2
+				<span id="LUCY">L U C Y</span>
+				<img src="files\images\PHONE\LUCY.jpg">
 			</div>
 			<div id="phone-frame-03">
-				3
+				<span id="JINX">J I N X</span>
+				<img src="files\images\PHONE\JINX.png">
 			</div>
 			<div id="phone-frame-04">
 				4
@@ -124,6 +132,7 @@
 				#
 			</div>
 		</div>
+		<span class="call-me"><div id="wobble">call me</div></span>
 		<button id="close-phone" class="phone-btn"><i class="fa-solid fa-power-off"></i></button>
 	</div>
 	<div id="phone-number-container">
